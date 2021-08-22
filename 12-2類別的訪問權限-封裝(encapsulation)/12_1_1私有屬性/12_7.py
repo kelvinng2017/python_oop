@@ -1,13 +1,13 @@
 """
-12_6.py:設定開戶(定義Banks類別物件)只要姓名，同時設定開戶金額書0元，讀者可留意第7和第8行的設定
+12_7.py:外部直接存取屬性值，造成存款餘額不安全的實例
 """
 
 
 class Banks():
     """定義銀行類別"""
 
-    def __init__(self, uname):  # 設定存款者名字
-        self.name = uname  # 初始化存款金額
+    def __init__(self, uname):  # 初始化方法
+        self.name = uname  # 設定存款這名字
         self.balance = 0  # 設定開戶金額是0
         self.bankname = "Taipei Bank"  # 設定銀行名稱
 
@@ -24,7 +24,6 @@ class Banks():
 
 
 hungbank = Banks('hung')  # 定義物件hungbank
-print("目前開戶銀行 ", hungbank.bankname)  # 列出目前開戶銀行
-hungbank.get_balance()  # 列出目前開戶銀行
-hungbank.save_money(100)  # hung存款100
-hungbank.get_balance()  # 獲得hung存款餘額
+hungbank.get_balance()
+hungbank.balance = 10000  # 類別外直接篡改存款餘額
+hungbank.get_balance()
