@@ -30,15 +30,17 @@ class Banks():
 
     def __cal_rate(self, usa_d):  # 計算換匯是私有方法
         return int(usa_d * self.__rate * (1-self.__service_charge))
-    
+
     def bank_title(self):
         return self.__bankname
 
+
 class Shilin_Banks(Banks):
-    #定義士林分行
+    # 定義士林分行
     pass
 
-hungbank = Shilin_Banks('hung') #定義物件hungbank
-print("我的存款銀行是:",hungbank.bank_title())
+
+hungbank = Shilin_Banks('hung')  # 定義物件hungbank
+print("我的存款銀行是:", hungbank.bank_title())
 hungbank.save_money(500)
 hungbank.get_balance()
