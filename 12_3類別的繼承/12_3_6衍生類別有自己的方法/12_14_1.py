@@ -20,6 +20,9 @@ class Dogs(Animals):
     def __init__(self, dog_name, dog_age):
         super().__init__('My pet '+dog_name.title(), dog_age)
 
+    def sleeping(self):
+        print("My pet", "is sleeping")
+
 
 mycat = Animals('lucy', 5)  # create animal object and tests
 print(mycat.name.title(), ' is ', mycat.age, " years old")
@@ -28,3 +31,4 @@ mycat.run()
 mydog = Dogs('lily', 6)  # create dogs object and test
 print(mydog.name.title(), ' is ', mydog.age, " years old")
 mydog.run()
+mydog.sleeping()
